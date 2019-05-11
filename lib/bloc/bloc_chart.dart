@@ -15,7 +15,7 @@ class BlocChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Map<String,double>>(
-      stream: BlocProvider.of<AppBloc>(context).outData,
+      stream: BlocProvider.getBloc<AppBloc>().outData,
       initialData: dataMap,
       builder: (context, snapshot) {
         return PieChart(

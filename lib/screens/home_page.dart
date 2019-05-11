@@ -14,7 +14,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: BlocProvider(
-        bloc: AppBloc(),
+        blocs: [
+          Bloc((i) => AppBloc()),
+        ],
         child: Scaffold(
           body: PageView(
             children: <Widget>[

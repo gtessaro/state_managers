@@ -5,8 +5,12 @@ import 'package:state_managers/bloc/bloc.dart';
 class BlocSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return getStreamBuilder(context);
+  }
+  
+  Widget getStreamBuilder(BuildContext context){
     return StreamBuilder<double>(
-        stream: BlocProvider.of<AppBloc>(context).outDouble,
+        stream: BlocProvider.getBloc<AppBloc>().outDouble,
         initialData: 0.4,
         builder: (context, snapshot) {
           return Slider(
@@ -14,10 +18,11 @@ class BlocSlider extends StatelessWidget {
             inactiveColor: Colors.white,
             value: snapshot.data,
             onChanged: (value){
-              BlocProvider.of<AppBloc>(context).increase(value);
+              BlocProvider.getBloc<AppBloc>().increase(value);
             },
           );
         }
     );
   }
+  
 }
