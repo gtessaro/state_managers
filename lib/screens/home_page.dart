@@ -1,10 +1,12 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:state_managers/bloc/bloc.dart';
 import 'package:state_managers/bloc/bloc_screen.dart';
 import 'package:state_managers/model/model.dart';
 import 'package:state_managers/model/model_screen.dart';
+import 'package:state_managers/provider/provider.dart';
 import 'package:state_managers/provider/provider_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,8 +31,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-                color: Colors.green,
-              child: ProviderScreen(),
+              color: Colors.green,
+              child: ChangeNotifierProvider(
+                child: ProviderScreen(),
+                builder: (context) => MySchedule(),
+              ),
             ),
           ],
         ),
