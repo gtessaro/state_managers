@@ -13,31 +13,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: PageView(
-          children: <Widget>[
-            Container(
-              color: Colors.blue[200],
-              child: ScopedModel<AppModel>(
-                child: ModelScreen(),
-                model: AppModel(),
-              )
-            ),
-            Container(
-              color: Colors.red[400],
-              child: BlocProvider(
-                bloc: AppBloc(),
+      child: BlocProvider(
+        bloc: AppBloc(),
+        child: Scaffold(
+          body: PageView(
+            children: <Widget>[
+              Container(
+                color: Colors.blue[200],
+                child: ScopedModel<AppModel>(
+                  child: ModelScreen(),
+                  model: AppModel(),
+                )
+              ),
+              Container(
+                color: Colors.red[400],
                 child: BlocScreen(),
               ),
-            ),
-            Container(
-              color: Colors.green,
-              child: ChangeNotifierProvider(
-                child: ProviderScreen(),
-                builder: (context) => MySchedule(),
+              Container(
+                color: Colors.green,
+                child: ChangeNotifierProvider(
+                  child: ProviderScreen(),
+                  builder: (context) => MySchedule(),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
