@@ -20,8 +20,4 @@ class MySchedule with ChangeNotifier{
 
   Map<String,double> get statManagementData => _statManagementData;
 
-  set statManagementData(Map<String,double> value){
-    _statManagementData = value;
-  }
-
 }
