@@ -9,7 +9,7 @@ class ProviderChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MySchedule>(
       builder:(context,schedule, _) => PieChart(
-        dataMap: createData(schedule.stateManagementTime*10),
+        dataMap: schedule.statManagementData,
         animationDuration: Duration(milliseconds: 800),
         showLegends: false,
         chartRadius: MediaQuery
@@ -20,14 +20,5 @@ class ProviderChart extends StatelessWidget {
         chartValuesColor: Colors.blueGrey[900].withOpacity(0.9),
       ),
     );
-  }
-
-  Map<String, double> createData(double value){
-    return {
-      "red":value,
-      "blue":2,
-      "green":2,
-      "yellow":2
-    };
   }
 }

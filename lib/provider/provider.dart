@@ -7,7 +7,21 @@ class MySchedule with ChangeNotifier{
 
   set stateManagementTime(double value){
     _stateManagementTime = value;
+    _statManagementData["red"]=value*10;
     notifyListeners();
+  }
+
+  Map<String,double> _statManagementData = {
+    "red":4,
+    "blue":2,
+    "green":2,
+    "yellow":2
+  };
+
+  Map<String,double> get statManagementData => _statManagementData;
+
+  set statManagementData(Map<String,double> value){
+    _statManagementData = value;
   }
 
 }
