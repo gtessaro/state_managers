@@ -5,6 +5,7 @@ import 'package:state_managers/bloc/bloc.dart';
 import 'package:state_managers/bloc/bloc_screen.dart';
 import 'package:state_managers/model/model.dart';
 import 'package:state_managers/model/model_screen.dart';
+import 'package:state_managers/provider/provider_screen.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,7 +29,8 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-                color: Colors.green
+                color: Colors.green,
+              child: ProviderScreen(),
             ),
           ],
         ),
